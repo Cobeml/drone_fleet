@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="nyc_midtown">
+    
+    <!-- Physics -->
+    <physics name="default_physics" default="0" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    
+    <!-- Scene -->
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    
+    <!-- Sun -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    
+    <!-- NYC Buildings Placeholder -->
+    <!-- This will be replaced with actual NYC 3D building models -->
+    
+    <!-- Empire State Building Placeholder -->
+    <model name="empire_state_building">
+      <static>true</static>
+      <pose>200 150 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>60 60 380</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>60 60 380</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Times Square Area Placeholder -->
+    <model name="times_square_building_1">
+      <static>true</static>
+      <pose>100 100 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>40 40 150</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>40 40 150</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.4 0.4 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="times_square_building_2">
+      <static>true</static>
+      <pose>100 160 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>50 40 120</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>50 40 120</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.4 0.4 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Additional Midtown Buildings -->
+    <model name="building_3">
+      <static>true</static>
+      <pose>150 100 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>30 50 180</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>30 50 180</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.4 1</ambient>
+            <diffuse>0.5 0.5 0.6 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="building_4">
+      <static>true</static>
+      <pose>50 150 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>45 35 160</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>45 35 160</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.3 1</ambient>
+            <diffuse>0.6 0.5 0.5 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="building_5">
+      <static>true</static>
+      <pose>250 100 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>40 60 200</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>40 60 200</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.3 0.4 0.4 1</ambient>
+            <diffuse>0.5 0.6 0.6 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Plugin for real-time factor control -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+      </ros>
+      <update_rate>1.0</update_rate>
+    </plugin>
+    
+  </world>
+</sdf>
